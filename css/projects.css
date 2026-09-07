@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     gap: 28px;
+    width: 100%;
 }
 
 .proj-card {
@@ -24,6 +25,10 @@
     box-shadow: var(--shadow-sm);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .proj-card:hover {
@@ -46,6 +51,7 @@
     color: var(--rose);
     opacity: 0.85;
     padding-top: 4px;
+    user-select: none;
 }
 
 .proj-content {
@@ -53,14 +59,15 @@
     flex-direction: column;
     gap: 16px;
     min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .proj-head {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
-    gap: 20px;
-    flex-wrap: wrap;
+    width: 100%;
+    min-width: 0;
 }
 
 .proj-title {
@@ -68,38 +75,23 @@
     font-weight: 700;
     letter-spacing: -0.02em;
     color: var(--ink);
-    line-height: 1.3;
-    flex: 1;
-    min-width: 260px;
-}
-
-.proj-badge {
-    font-family: var(--font-mono);
-    font-size: 11.5px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: var(--radius-full);
-    white-space: nowrap;
-}
-
-.proj-badge.ongoing {
-    background: var(--bg-soft);
-    color: var(--rose-deep);
-    border: 1px solid rgba(185, 130, 143, 0.3);
-}
-
-.proj-badge.completed {
-    background: var(--sage-tint);
-    color: #556B48;
-    border: 1px solid rgba(170, 184, 160, 0.35);
+    line-height: 1.35;
+    margin: 0;
+    word-break: normal;
+    overflow-wrap: break-word;
+    min-width: 0;
+    width: 100%;
 }
 
 .proj-desc {
     font-size: 15.5px;
     color: var(--ink-soft);
     line-height: 1.75;
+    margin: 0;
+    word-break: normal;
+    overflow-wrap: break-word;
+    min-width: 0;
+    width: 100%;
 }
 
 /* Tech Stack Pills */
@@ -107,6 +99,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 2px;
 }
 
 .stack-pill {
@@ -116,49 +111,11 @@
     color: var(--ink-soft);
     background: var(--bg);
     border: 1px solid var(--border);
-    padding: 4px 12px;
+    padding: 5px 12px;
     border-radius: var(--radius-full);
-}
-
-/* GitHub Action Link */
-.proj-action {
-    display: flex;
-    align-items: center;
-    padding-top: 6px;
-}
-
-.github-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13.5px;
-    font-weight: 600;
-    color: var(--ink);
-    padding: 10px 18px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-full);
-    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
-}
-
-.github-btn i {
-    font-size: 16px;
-    color: var(--rose-deep);
-}
-
-.github-btn span.arrow {
-    transition: transform 0.2s ease;
-}
-
-.github-btn:hover {
-    border-color: var(--rose);
-    color: var(--rose-deep);
-    background: var(--bg-soft);
-    transform: translateY(-1px);
-}
-
-.github-btn:hover span.arrow {
-    transform: translateX(3px);
+    white-space: nowrap;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* ---------- Responsive ---------- */
@@ -166,20 +123,65 @@
 @media (max-width: 800px) {
     .proj-card {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 14px;
         padding: 26px 22px;
     }
 
     .proj-index {
         font-size: 20px;
+        padding-top: 0;
     }
 
     .proj-title {
         font-size: 20px;
+        line-height: 1.35;
     }
 
-    .proj-head {
-        flex-direction: column;
-        gap: 10px;
+    .proj-desc {
+        font-size: 15px;
+        line-height: 1.68;
+    }
+
+    .proj-content {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .proj-card {
+        padding: 22px 18px;
+        border-radius: 12px;
+        gap: 12px;
+    }
+
+    .proj-list {
+        gap: 20px;
+    }
+
+    .proj-index {
+        font-size: 18px;
+    }
+
+    .proj-title {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .proj-desc {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .proj-content {
+        gap: 12px;
+    }
+
+    .proj-stack {
+        gap: 6px;
+    }
+
+    .stack-pill {
+        font-size: 11.5px;
+        padding: 4px 10px;
     }
 }
