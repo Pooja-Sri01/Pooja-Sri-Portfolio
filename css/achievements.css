@@ -1,0 +1,126 @@
+/* ==========================================================
+   ACHIEVEMENTS PAGE
+   Theme: Soft Pastel + Editorial Numbered Grid
+   ========================================================== */
+
+.achieve-section {
+    padding-bottom: 90px;
+}
+
+.achieve-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.achieve-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 34px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.achieve-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--rose);
+    box-shadow: var(--shadow-md);
+}
+
+.achieve-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.achieve-index {
+    font-family: var(--font-mono);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--rose);
+    letter-spacing: -0.02em;
+    opacity: 0.85;
+}
+
+.achieve-date {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--rose-deep);
+    background: var(--bg-soft);
+    border: 1px solid rgba(185, 130, 143, 0.25);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+.achieve-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.achieve-title {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1.35;
+}
+
+.achieve-org {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--rose-deep);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.achieve-detail {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+}
+
+/* Subtle corner accent */
+.achieve-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    background: radial-gradient(circle at top right, rgba(248, 238, 241, 0.9) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 800px) {
+    .achieve-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .achieve-card {
+        padding: 26px 24px;
+    }
+
+    .achieve-index {
+        font-size: 24px;
+    }
+
+    .achieve-title {
+        font-size: 19px;
+    }
+}
